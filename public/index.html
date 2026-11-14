@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System - Lab 4</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Library Management System</h1>
+\</header>
+
+<nav>
+    <button onclick="showPage('search')">F2.1 Search Books</button>
+
+    <button onclick="showPage('catalogue')">F2.2 Catalogue</button>
+
+    <button onclick="showPage('reports')">F2.3 Reports</button>
+
+    <button onclick="showPage('loans')">F2.4 Loans</button>
+
+    <button onclick="showPage('most')">F2.5 Most Borrowed</button>
+
+    <button onclick="showPage('authors')">F2.6 Authors</button>
+</nav>
+
+<main>
+
+    <!-- F2.1 -->
+    <section id="search" class="page">
+
+        <h2>Search Books</h2>
+
+        <input id="keyword"
+               type="text"
+               placeholder="Enter title keyword">
+
+        <input id="minPrice"
+               type="number"
+               placeholder="Minimum price"
+               value="0">
+
+        <input id="maxPrice"
+               type="number"
+               placeholder="Maximum price"
+               value="1000">
+
+        <select id="categoryId">
+            <option value="all">All Categories</option>
+        </select>
+
+        <button onclick="searchBooks()">Search</button>
+
+        <div id="searchResults"></div>
+
+    </section>
+
+
+    <!-- F2.2 -->
+    <section id="catalogue" class="page hidden">
+
+        <h2>Book Catalogue</h2>
+
+        <button onclick="loadCatalogue()">Show Catalogue</button>
+
+        <div id="catalogueResults"></div>
+
+    </section>
+
+
+    <!-- F2.3 -->
+    <section id="reports" class="page hidden">
+
+        <h2>Library Reports</h2>
+
+        <h3>Books and Average Price per Category</h3>
+
+        <button onclick="loadCategoryReports()">Show Categories</button>
+
+        <div id="categoryResults"></div>
+
+        <h3>Authors with at least 2 Books</h3>
+
+        <button onclick="loadAuthorReports()">Show Authors</button>
+
+        <div id="authorReports"></div>
+
+        <h3>Library Price Statistics</h3>
+
+        <button onclick="loadPriceReports()">Show Statistics</button>
+
+        <div id="priceResults"></div>
+
+    </section>
+
+
+    <!-- F2.4 -->
+    <section id="loans" class="page hidden">
+
+        <h2>Loans Management</h2>
+
+        <h3>Books Not Returned</h3>
+
+        <button onclick="loadActiveLoans()">Show Active Loans</button>
+
+        <div id="activeLoans"></div>
+
+        <h3>Members Who Never Borrowed</h3>
+
+        <button onclick="loadNoMembers()">Show Members</button>
+
+        <div id="noMembers"></div>
+
+        <h3>Books Never Borrowed</h3>
+
+        <button onclick="loadNoBooks()">Show Books</button>
+
+        <div id="noBooks"></div>
+
+    </section>
+
+
+    <!-- F2.5 -->
+    <section id="most" class="page hidden">
+
+        <h2>Most Borrowed</h2>
+
+        <h3>Top 3 Books</h3>
+
+        <button onclick="loadMostBooks()">Show Top Books</button>
+
+        <div id="mostBooks"></div>
+
+        <h3>Member with Most Loans</h3>
+
+        <button onclick="loadMostMembers()">Show Top Member</button>
+
+        <div id="mostMembers"></div>
+
+    </section>
+
+
+    <!-- F2.6 -->
+    <section id="authors" class="page hidden">
+
+        <h2>Authors and Books</h2>
+
+        <h3>All Authors and Number of Books</h3>
+
+        <button onclick="loadAuthors()">Show Authors</button>
+
+        <div id="allAuthors"></div>
+
+        <h3>Books with Author and Publisher from Same Country</h3>
+
+        <button onclick="loadSameCountry()">Show Books</button>
+
+        <div id="sameCountry"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Database Lab 4 - Fall 2026</p>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
